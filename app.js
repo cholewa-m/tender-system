@@ -8,7 +8,10 @@ var indexRouter = require('./routes/index');
 
 var app = express();
 
-var dataBase = require('./models/database/db.js');
+//models TODO needed?
+var offer = require('./models/offer');
+var tender = require('./models/tender');
+
 
 // view engine setup
 app.set('view engine', 'ejs');
@@ -18,8 +21,6 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
 app.use('/', indexRouter);
-
-
 
 
 module.exports = app;
