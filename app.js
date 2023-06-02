@@ -4,6 +4,7 @@ var path = require("path");
 const dotenv = require('dotenv').config();
 
 var indexRouter = require('./routes/index');
+var newTenderRouter = require('./routes/newTender');
 
 
 var app = express();
@@ -21,6 +22,8 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
 app.use('/', indexRouter);
+app.use('/add-tender', newTenderRouter);
+
 
 
 module.exports = app;
