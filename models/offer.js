@@ -13,9 +13,9 @@ const Offer = {
         });
     },
     getValidOffersForTender: function(tenderId, callback) {
-        let sql = `SELECT Offer.* FROM Offer NATURAL JOIN Tender 
-            WHERE Offer.tender_id = ${tenderId} AND Offer.cost <= Tender.budget
-            ORDER BY Offer.cost ASC`;
+        let sql = `SELECT Offer.* FROM Offer JOIN Tender ON Offer.tender_id = Tender.id 
+        WHERE Offer.tender_id = ${tenderId} AND Offer.cost <= Tender.budget
+        ORDER BY Offer.cost ASC`;
         dataBase.query(sql, function(err, result) {
             if (err) {
                 throw err;
@@ -24,6 +24,7 @@ const Offer = {
             }
         });
     },
+
 
 
 
