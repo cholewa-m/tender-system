@@ -27,7 +27,7 @@
     <% for(let i=0; i<tenders.length; i++) {%>
         <tr>
             <td><%= tenders[i].id %></td>
-            <td><a href="#"><%= tenders[i].name %></a></td>
+            <td><a href="/tender/<%= tenders[i].id %>"><%= tenders[i].name %></a></td>
             <td><%= tenders[i].start_date %></td>
             <td><%= tenders[i].end_date %></td>
         </tr>

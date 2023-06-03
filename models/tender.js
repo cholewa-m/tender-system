@@ -22,7 +22,18 @@ const Tender = {
                 callback(err, result);
             }
         });
+    },
+    getTenderById: function(id, callback) {
+        let sql = `SELECT * FROM Tender WHERE id = ${id}`;
+        dataBase.query(sql, function (err, result) {
+            if(err) {
+                throw err;
+            } else {
+                callback(err, result[0]);
+            }
+        });
     }
+
 
 };
 
