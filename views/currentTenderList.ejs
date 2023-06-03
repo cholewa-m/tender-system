@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tender List</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+<h1>Current Tenders</h1>
+<table>
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Start Date</th>
+        <th>End Date</th>
+    </tr>
+    <% for(let i=0; i<tenders.length; i++) {%>
+        <tr>
+            <td><%= tenders[i].id %></td>
+            <td><a href="#"><%= tenders[i].name %></a></td>
+            <td><%= tenders[i].start_date %></td>
+            <td><%= tenders[i].end_date %></td>
+        </tr>
+    <% } %>
+</table>
+</body>
+</html>

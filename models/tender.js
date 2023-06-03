@@ -11,8 +11,18 @@ const Tender = {
                 callback(err, result);
             }
         });
+    },
+    getCurrentTenders: function (callback) {
+        let currentDate = new Date().toISOString().slice(0, 19).replace('T', ' ');
+        let sql = `SELECT * FROM Tender WHERE start_date <= '${currentDate}' AND end_date >= '${currentDate}'`;
+        dataBase.query(sql, function (err, result) {
+            if (err) {
+                throw err;
+            } else {
+                callback(err, result);
+            }
+        });
     }
-
 
 };
 

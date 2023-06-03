@@ -5,6 +5,7 @@ const dotenv = require('dotenv').config();
 
 var indexRouter = require('./routes/index');
 var newTenderRouter = require('./routes/newTender');
+var currentTenderListRouter = require('./routes/currentTenderList');
 
 
 var app = express();
@@ -23,6 +24,12 @@ app.use(express.urlencoded({ extended: false }));
 
 app.use('/', indexRouter);
 app.use('/add-tender', newTenderRouter);
+app.use('/current-tenders', currentTenderListRouter);
+
+
+//...
+
+
 
 
 
