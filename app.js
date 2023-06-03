@@ -7,6 +7,9 @@ var indexRouter = require('./routes/index');
 var newTenderRouter = require('./routes/newTender');
 var currentTenderListRouter = require('./routes/currentTenderList');
 var tenderDetailRouter = require('./routes/tenderDetail');
+var newOfferRouter = require('./routes/newOffer');
+
+
 
 
 var app = express();
@@ -24,6 +27,7 @@ app.use('/', indexRouter);
 app.use('/add-tender', newTenderRouter);
 app.use('/current-tenders', currentTenderListRouter);
 app.use('/tender', tenderDetailRouter);
+app.use('/add-offer', newOfferRouter);
 
 
 //...

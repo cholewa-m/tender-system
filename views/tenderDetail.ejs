@@ -7,17 +7,6 @@
 <h1><%= tender.name %></h1>
 <h3>Institution: <%= tender.institution %></h3>
 <p><%= tender.content %></p>
-<button id="offerButton" onclick="location.href='#'">Make Offer</button>
-<script>
-    document.getElementById("offerButton").addEventListener("click", function() {
-        var endDate = new Date('<%= tender.end_date %>');
-        if (new Date() > endDate) {
-            alert('This tender is already closed.');
-            window.location.href = '/current-tenders';
-        } else {
-            window.location.href = '#'; //TODO link to offer form
-        }
-    });
-</script>
+<button id="offerButton" onclick="location.href='/add-offer/<%= tender.id %>'">Make Offer</button>
 </body>
 </html>
