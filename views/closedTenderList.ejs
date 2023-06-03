@@ -26,7 +26,7 @@
     <% tenders.forEach(function(tender) { %>
         <tr>
             <td><%= tender.id %></td>
-            <td><a href="#"><%= tender.name %></a></td>
+            <td><a href="/offer-list/<%= tender.id %>"><%= tender.name %></a></td>
             <td>Tender closed</td>
         </tr>
     <% }); %>

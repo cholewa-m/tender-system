@@ -11,7 +11,21 @@ const Offer = {
                 callback(err, result);
             }
         });
-    }
+    },
+    getValidOffersForTender: function(tenderId, callback) {
+        let sql = `SELECT Offer.* FROM Offer NATURAL JOIN Tender 
+            WHERE Offer.tender_id = ${tenderId} AND Offer.cost <= Tender.budget
+            ORDER BY Offer.cost ASC`;
+        dataBase.query(sql, function(err, result) {
+            if (err) {
+                throw err;
+            } else {
+                callback(err, result);
+            }
+        });
+    },
+
+
 
 };
 

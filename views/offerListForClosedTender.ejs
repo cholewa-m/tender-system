@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Offer List for Closed Tender</title>
+</head>
+<body>
+<h1>Offer List for Closed Tender</h1>
+
+<% if (offers.length > 0) { %>
+    <table>
+        <thead>
+        <tr>
+            <th>Name</th>
+            <th>Cost</th>
+            <th>Date</th>
+        </tr>
+        </thead>
+        <tbody>
+        <% offers.forEach(offer => { %>
+            <tr>
+                <td><%= offer.bidder %></td>
+                <td><%= offer.cost %></td>
+                <td><%= offer.date %></td>
+            </tr>
+        <% }); %>
+        </tbody>
+    </table>
+<% } else { %>
+    <p>No valid offers for this tender.</p>
+<% } %>
+
+<button onclick="location.href='/closed-tenders'">Back to Closed Tenders</button>
+
+</body>
+</html>
