@@ -16,7 +16,7 @@ var offerListForClosedTenderRouter = require('./routes/offerListForClosedTender'
 
 var app = express();
 
-
+app.use(express.static(path.join(__dirname, 'public')))
 
 // view engine setup
 app.set('view engine', 'ejs');

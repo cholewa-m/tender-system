@@ -1,23 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Offer List for Closed Tender</title>
-    <style>
-        table {
-            width: 100%;
-            border-collapse: collapse;
-        }
-
-        th, td {
-            border: 1px solid #ddd;
-            padding: 8px;
-            text-align: left;
-        }
-    </style>
+    <title>Offer list for closed Tender</title>
+    <link rel="stylesheet" type="text/css" href="/stylesheets/style.css">
 </head>
 <body>
-<h1>Offer List for Closed Tender</h1>
-
+<h1>Offer list for closed Tender</h1>
 <% if (offers.length > 0) { %>
     <table>
         <thead>
@@ -40,8 +28,6 @@
 <% } else { %>
     <p>No valid offers for this tender.</p>
 <% } %>
-
-<button onclick="location.href='/closed-tenders'">Back to Closed Tenders</button>
-
 </body>
+<%- include('partials/navigation.ejs') %>
 </html>

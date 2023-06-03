@@ -2,21 +2,10 @@
 <html>
 <head>
     <title>Tender List</title>
-    <style>
-        table {
-            width: 100%;
-            border-collapse: collapse;
-        }
-
-        th, td {
-            border: 1px solid #ddd;
-            padding: 8px;
-            text-align: left;
-        }
-    </style>
+    <link rel="stylesheet" type="text/css" href="/stylesheets/style.css">
 </head>
-<h1>Closed tenders</h1>
-
+<h1>Closed Tenders</h1>
+<body>
 <table>
     <tr>
         <th>ID</th>
@@ -31,3 +20,6 @@
         </tr>
     <% }); %>
 </table>
+<%- include('partials/navigation.ejs') %>
+</body>
+</html>

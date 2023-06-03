@@ -2,18 +2,7 @@
 <html>
 <head>
     <title>Tender List</title>
-    <style>
-        table {
-            width: 100%;
-            border-collapse: collapse;
-        }
-
-        th, td {
-            border: 1px solid #ddd;
-            padding: 8px;
-            text-align: left;
-        }
-    </style>
+    <link rel="stylesheet" type="text/css" href="/stylesheets/style.css">
 </head>
 <body>
 <h1>Current Tenders</h1>
@@ -33,5 +22,6 @@
         </tr>
     <% } %>
 </table>
+<%- include('partials/navigation.ejs') %>
 </body>
 </html>

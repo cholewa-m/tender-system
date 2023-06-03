@@ -2,11 +2,13 @@
 <html>
 <head>
     <title>Tender Detail</title>
+    <link rel="stylesheet" type="text/css" href="/stylesheets/style.css">
 </head>
 <body>
 <h1><%= tender.name %></h1>
 <h3>Institution: <%= tender.institution %></h3>
 <p><%= tender.content %></p>
-<button id="offerButton" onclick="location.href='/add-offer/<%= tender.id %>'">Make Offer</button>
+<input type="submit" value="Make Offer" onclick="location.href='/add-offer/<%= tender.id %>'">
+<%- include('partials/navigation.ejs') %>
 </body>
 </html>

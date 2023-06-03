@@ -2,25 +2,37 @@
 <html>
 <head>
     <title>Add Tender</title>
+    <link rel="stylesheet" type="text/css" href="/stylesheets/style.css">
+    <script>
+        window.onload = function(){
+            document.getElementById('endDate').addEventListener('change', function() {
+                var startDate = new Date(document.getElementById('startDate').value);
+                var endDate = new Date(this.value);
+                if (endDate < startDate) {
+                    alert('End Date should be greater than Start Date');
+                    this.value = '';
+                }
+            });
+        };
+    </script>
 </head>
 <body>
-<h1>Add New Tender</h1>
-
+<h1>Add Tender</h1>
 <form action="/add-tender" method="post">
     <label for="name">Name:</label><br>
-    <input type="text" id="name" name="name"><br>
+    <input type="text" id="name" name="name" required pattern="\S+.*"><br>
     <label for="content">Content:</label><br>
     <textarea id="content" name="content"></textarea><br>
     <label for="institution">Institution:</label><br>
-    <input type="text" id="institution" name="institution"><br>
-    <label for="budget">Budget:</label><br>
-    <input type="number" id="budget" name="budget"><br>
+    <input type="text" id="institution" name="institution" required pattern="\S+.*"><br>
     <label for="startDate">Start Date:</label><br>
-    <input type="datetime-local" id="startDate" name="startDate"><br>
+    <input type="datetime-local" id="startDate" name="startDate" required><br>
     <label for="endDate">End Date:</label><br>
-    <input type="datetime-local" id="endDate" name="endDate"><br>
+    <input type="datetime-local" id="endDate" name="endDate" required><br>
+    <label for="budget">Budget: (zł)</label><br>
+    <input type="number" id="budget" name="budget" min="0" required><br>
     <input type="submit" value="Add Tender">
 </form>
-
+<%- include('partials/navigation.ejs') %>
 </body>
 </html>

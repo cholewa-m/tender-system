@@ -2,15 +2,17 @@
 <html>
 <head>
     <title>Make Offer</title>
+    <link rel="stylesheet" type="text/css" href="/stylesheets/style.css">
 </head>
 <body>
 <h1>Make Offer</h1>
 <form method="post" action="/add-offer/<%= tenderId %>">
     <label for="bidder">Bidder:</label><br>
-    <input type="text" id="bidder" name="bidder" required><br>
-    <label for="cost">Cost:</label><br>
-    <input type="number" id="cost" name="cost" required><br>
+    <input type="text" id="bidder" name="bidder" required pattern="\S+.*"><br>
+    <label for="cost">Cost: (zł)</label><br>
+    <input type="number" id="cost" name="cost" required min="0"><br>
     <input type="submit" value="Make Offer">
 </form>
+<%- include('partials/navigation.ejs') %>
 </body>
 </html>
