@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tender List</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+    </style>
+</head>
+<h1>Closed tenders</h1>
+
+<table>
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Status</th>
+    </tr>
+    <% tenders.forEach(function(tender) { %>
+        <tr>
+            <td><%= tender.id %></td>
+            <td><a href="#"><%= tender.name %></a></td>
+            <td>Tender closed</td>
+        </tr>
+    <% }); %>
+</table>

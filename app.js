@@ -8,6 +8,7 @@ var newTenderRouter = require('./routes/newTender');
 var currentTenderListRouter = require('./routes/currentTenderList');
 var tenderDetailRouter = require('./routes/tenderDetail');
 var newOfferRouter = require('./routes/newOffer');
+var closedTenderListRouter = require('./routes/closedTenderList');
 
 
 
@@ -28,6 +29,7 @@ app.use('/add-tender', newTenderRouter);
 app.use('/current-tenders', currentTenderListRouter);
 app.use('/tender', tenderDetailRouter);
 app.use('/add-offer', newOfferRouter);
+app.use('/closed-tenders', closedTenderListRouter);
 
 
 //...

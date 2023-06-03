@@ -33,7 +33,19 @@ const Tender = {
                 callback(err, result[0]);
             }
         });
+    },
+    getClosedTenders: function(callback) {
+        let currentDate = moment().local().format('YYYY-MM-DD HH:mm:ss');
+        let sql = `SELECT * FROM Tender WHERE end_date < '${currentDate}'`;
+        dataBase.query(sql, function (err, result) {
+            if (err) {
+                throw err;
+            } else {
+                callback(err, result);
+            }
+        });
     }
+
 
 
 };
