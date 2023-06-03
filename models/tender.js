@@ -1,4 +1,5 @@
 const dataBase = require('./database/connection');
+const moment = require("moment");
 
 const Tender = {
     addTender: function (name, content, institution, budget, startDate, endDate, callback) {
@@ -13,7 +14,7 @@ const Tender = {
         });
     },
     getCurrentTenders: function (callback) {
-        let currentDate = new Date().toISOString().slice(0, 19).replace('T', ' ');
+        let currentDate = moment().local().format('YYYY-MM-DD HH:mm:ss');
         let sql = `SELECT * FROM Tender WHERE start_date <= '${currentDate}' AND end_date >= '${currentDate}'`;
         dataBase.query(sql, function (err, result) {
             if (err) {
