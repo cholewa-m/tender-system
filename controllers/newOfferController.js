@@ -11,7 +11,6 @@ exports.createOffer = (req, res) => {
     const { bidder, cost } = req.body;
     const tenderId = req.params.tenderId;
 
-
     tenderModel.getTenderById(tenderId, (err, result) => {
         if (err) {
             res.status(500).send("Internal Server Error");

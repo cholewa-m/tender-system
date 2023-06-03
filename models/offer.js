@@ -23,11 +23,7 @@ const Offer = {
                 callback(err, result);
             }
         });
-    },
-
-
-
-
+    }
 };
 
 module.exports = Offer;
