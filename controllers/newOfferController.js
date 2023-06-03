@@ -22,7 +22,7 @@ exports.createOffer = (req, res) => {
                     if (err) {
                         res.status(500).send("Internal Server Error");
                     } else {
-                        res.redirect('/');
+                        res.redirect('/current-tenders');
                     }
                 });
             } else {
